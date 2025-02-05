@@ -26,6 +26,7 @@
             app:iss_auto_cycle="true"
             app:iss_period="1000"
             app:iss_delay="1000"
+
             app:iss_text_align="CENTER" />
 
 
@@ -85,6 +86,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
+
                     android:layout_height="wrap_content">
 
                     <TextView

@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#070707">
+        android:background="#B5828C">
 
         <ImageView
             android:id="@+id/new_img"
@@ -27,7 +27,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/blue"
+            android:background="#FFB4A2"
             android:fontFamily="@font/poppins"
             android:padding="6dp"
             android:text="New"
@@ -45,9 +45,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:fontFamily="@font/poppins"
+            android:gravity="center"
             android:text="Product Name"
             android:textSize="17sp"
-            android:textStyle="bold"
+            android:maxLength="7"
+            android:textColor="#E6DDDD"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/new_img" />

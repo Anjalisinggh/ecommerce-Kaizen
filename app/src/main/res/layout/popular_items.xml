@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#7D6A6A">
+        android:background="#B5828C">
 
         <ImageView
             android:id="@+id/all_img"
@@ -31,6 +31,8 @@
             android:layout_marginTop="6dp"
             android:fontFamily="@font/poppins"
             android:text="Product Name"
+            android:gravity="center"
+            android:maxLength="10"
             android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

@@ -19,7 +19,7 @@ import java.util.List;
 public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder> {
     Context context;
     List<MyCartModel> list;
-    int totalAmount=0;
+    int totalAmount ;
 
 
     public MyCartAdapter(Context context, List<MyCartModel> list) {
