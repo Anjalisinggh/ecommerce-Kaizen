@@ -10,7 +10,7 @@
         android:id="@+id/address_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#8FF7FD"
+        android:background="#B5828C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

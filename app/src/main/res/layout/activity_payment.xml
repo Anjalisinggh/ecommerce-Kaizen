@@ -5,11 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D0ACAC"
     tools:context=".activites.PaymentActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/payment_toolbar"
-        android:background="#8FF7FD"
+        android:background="#A04D4D"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,12 +25,15 @@
         android:id="@+id/imageView3"
         android:layout_width="340dp"
         android:layout_height="244dp"
+        android:background="#D0ACAC"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/payment_toolbar"
-        app:srcCompat="@drawable/card_prev" />
+        app:srcCompat="@drawable/card_prev1"
+        />
 
     <TextView
         android:id="@+id/textView12"
@@ -132,6 +136,7 @@
         android:text="Check Out"
         android:textStyle="bold"
         android:textColor="@android:color/white"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
