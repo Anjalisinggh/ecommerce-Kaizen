@@ -16,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/pink"
+
         android:minHeight="?attr/actionBarSize"
         app:title="Welcome"
         android:theme="?attr/actionBarTheme"/>
@@ -23,6 +24,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:background="#B5828C"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -20,20 +20,18 @@
         app:title="Payment Detailed"/>
 
 
-
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="340dp"
         android:layout_height="244dp"
+        android:layout_marginTop="16dp"
         android:background="#D0ACAC"
-        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toBottomOf="@+id/payment_toolbar"
-        app:srcCompat="@drawable/card_prev1"
-        />
+        app:srcCompat="@drawable/img_7" />
 
     <TextView
         android:id="@+id/textView12"
@@ -136,7 +134,6 @@
         android:text="Check Out"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"

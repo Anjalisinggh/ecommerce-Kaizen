@@ -29,7 +29,7 @@
         android:fontFamily="@font/poppins"
         android:gravity="center"
         android:padding="18dp"
-        android:text="Total price : 500 Rs"
+        android:text="Total price : 00 Rs"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,37 +50,22 @@
         tools:listitem="@layout/my_cart_item" />
 
     <Button
-        android:id="@+id/remove_from_cart"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/mycart"
-        android:drawableTint="@color/white"
-        android:padding="14dp"
-        android:text="Remove from Cart"
-        android:background="@color/pink"
-        android:textAllCaps="false"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buy_now"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-         />
-
-    <Button
         android:id="@+id/buy_now"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/purple_200"
+        android:backgroundTint="@color/blue"
         android:drawableLeft="@drawable/ic_baseline_shopping_cart_24"
         android:drawableTint="@color/white"
         android:padding="14dp"
         android:text="Buy Now"
-        android:background="@color/blue"
         android:textAllCaps="false"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/remove_from_cart"
- />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent=".9"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

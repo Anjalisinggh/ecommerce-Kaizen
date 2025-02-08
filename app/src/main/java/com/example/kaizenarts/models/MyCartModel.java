@@ -67,5 +67,7 @@ public class MyCartModel {
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }
-}
 
+    public void setDocumentId(String id) {
+    }
+}

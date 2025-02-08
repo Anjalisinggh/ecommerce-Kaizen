@@ -1,5 +1,6 @@
 package com.example.kaizenarts.activites;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -110,6 +111,7 @@ public class AddressActivity extends AppCompatActivity implements AddressAdapter
         recyclerView.setAdapter(addressAdapter);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void fetchAddresses() {
         if (auth.getCurrentUser() != null) {
             firestore.collection("CurrentUser").document(auth.getCurrentUser().getUid())
