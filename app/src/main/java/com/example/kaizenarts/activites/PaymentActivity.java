@@ -39,12 +39,12 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultL
         toolbar.setNavigationOnClickListener(v -> finish());
 
         // Retrieve amount (handles both single product and cart purchases)
-        amount = getIntent().getDoubleExtra("amount",  -1.0);
+        amount = getIntent().getDoubleExtra("amount",  0.0);
 
 
         Log.d("PaymentActivity", "Received Amount: " + amount);
 
-        if (amount > 0.0) { // ✅ Prevent invalid amount
+        if (amount < 0.0) { // ✅ Prevent invalid amount
             Log.e("PaymentActivity", "Invalid amount received. Redirecting...");
             Toast.makeText(this, "Invalid amount received!", Toast.LENGTH_LONG).show();
             finish(); // Close activity if invalid amount

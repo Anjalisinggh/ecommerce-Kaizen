@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -34,7 +35,7 @@ public class cartActivity extends AppCompatActivity {
     private Button buyNow;
     private FirebaseAuth auth;
     private FirebaseFirestore firestore;
-    private int totalAmount = 0; // ✅ Fix to store total amount
+    private double totalAmount = 0.0; // ✅ Fix to store total amount
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,7 @@ public class cartActivity extends AppCompatActivity {
                 startActivity(intent);
             } else {
                 Log.e("CartActivity", "Cart is empty, cannot proceed to payment.");
+
             }
         });
     }
