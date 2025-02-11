@@ -16,9 +16,9 @@ import com.example.kaizenarts.fragments.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-    Fragment homeFragment;
-    FirebaseAuth auth;
-    Toolbar toolbar;
+    private Fragment homeFragment;
+    private FirebaseAuth auth;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +28,14 @@ public class MainActivity extends AppCompatActivity {
         // Initialize FirebaseAuth
         auth = FirebaseAuth.getInstance();
 
-        // Initialize the toolbar and set it as the action bar
+        // Set up the toolbar
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
-        }
+        // Remove conflicting ActionBar settings
+        // No need for getSupportActionBar() modifications if using NoActionBar theme
 
-        // Load the home fragment
+        // Load the HomeFragment
         homeFragment = new HomeFragment();
         loadFragment(homeFragment);
     }
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.menu_logout) {
             auth.signOut(); // Sign out the user
             Intent intent = new Intent(MainActivity.this, loginActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Clear activity stack
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish(); // Close MainActivity
         } else if (id == R.id.menu_my_cart) {
@@ -68,5 +66,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
 }

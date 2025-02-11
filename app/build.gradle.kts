@@ -9,11 +9,11 @@ android {
 
     defaultConfig {
         applicationId = "com.example.kaizenarts"
-        minSdk = 32
+        minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
+        multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -24,6 +24,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
@@ -50,8 +51,13 @@ dependencies {
     implementation ("com.google.android.material:material:1.9.0")
     implementation ("com.google.android.gms:play-services-auth:20.5.0")
     implementation ("com.razorpay:checkout:1.6.40")
-
+    implementation("androidx.multidex:multidex:2.0.1")
 
     implementation("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
+
+    implementation ("androidx.camera:camera-core:1.2.0")
+    implementation ("androidx.camera:camera-camera2:1.2.0")
+    implementation ("androidx.camera:camera-lifecycle:1.2.0")
+    implementation ("androidx.camera:camera-view:1.2.0")
 }

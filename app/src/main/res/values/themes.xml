@@ -1,23 +1,27 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme -->
     <style name="Base.Theme.KaizenArts" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your light theme here -->
-        <item name="colorPrimary">#DC9DED</item>
-        <item name="colorPrimaryVariant">@color/material_dynamic_tertiary80</item>
+        <!-- Primary Colors -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
 
+        <!-- Secondary Colors -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
 
-        <!-- App bar styling -->
-        <item name="actionBarStyle">@style/AppBarStyle</item>
+        <!-- Status Bar -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!-- App Bar Styling -->
+        <item name="actionBarStyle">@style/AppBarStyle</item>
     </style>
 
+    <!-- Main Theme -->
     <style name="Theme.KaizenArts" parent="Base.Theme.KaizenArts" />
 
-    <!-- App bar style -->
+    <!-- App Bar Styling -->
     <style name="AppBarStyle" parent="Widget.MaterialComponents.Toolbar.Primary">
         <item name="android:background">?attr/colorPrimary</item>
         <item name="titleTextColor">@color/white</item>

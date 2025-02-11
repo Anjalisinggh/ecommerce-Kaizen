@@ -11,96 +11,92 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.kaizenarts.R;
 import com.example.kaizenarts.adapters.SliderAdapter;
-import com.example.kaizenarts.fragments.HomeFragment;
 
 public class onBoardingActivity extends AppCompatActivity {
 
-    ViewPager viewPager;
-    LinearLayout dotsLayout;
+    private ViewPager viewPager;
+    private LinearLayout dotsLayout;
+    private Button btn;
+    private SliderAdapter sliderAdapter;
+    private TextView[] dots;
+    private Animation animation;
 
-    Button btn;
-    SliderAdapter sliderAdapter;
-
-    TextView[] dots;
-    Animation animation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_on_boarding);
 
-        getSupportActionBar();
+        // Hide Action Bar (Prevents potential crashes)
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+        // Initialize Views
         viewPager = findViewById(R.id.slider);
         dotsLayout = findViewById(R.id.dots);
         btn = findViewById(R.id.get_started_btn);
-        addDots(0);
 
-        viewPager.addOnPageChangeListener(changeListener);
+        // Ensure button is initially hidden
+        btn.setVisibility(View.INVISIBLE);
 
+        // Setup ViewPager and Adapter
         sliderAdapter = new SliderAdapter(this);
         viewPager.setAdapter(sliderAdapter);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(onBoardingActivity.this, MainActivity.class));
-                finish();
-            }
+
+        // Add Dots for navigation
+        addDots(0);
+        viewPager.addOnPageChangeListener(changeListener);
+
+        // Handle Button Click
+        btn.setOnClickListener(v -> {
+            startActivity(new Intent(onBoardingActivity.this, MainActivity.class));
+            finish();
         });
-
     }
-
-
 
     private void addDots(int position) {
-
-        dots = new TextView[3];
+        dots = new TextView[3]; // Update this if slide count changes
         dotsLayout.removeAllViews();
+
         for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
-            dots[i].setText(Html.fromHtml("&#8226;"));  // Use bullet character
-            dots[i].setTextSize(35);  // Set size of dots
-            dots[i].setTextColor(getResources().getColor(R.color.pink));  // Set default color for inactive dots
+            dots[i].setText(Html.fromHtml("&#8226;"));  // Bullet point
+            dots[i].setTextSize(35);
+            dots[i].setTextColor(ContextCompat.getColor(this, R.color.pink));  // Default color
             dotsLayout.addView(dots[i]);
         }
-        // Set the active dot color
-        if (dots.length > 0) {
-            dots[position].setTextColor(getResources().getColor(R.color.white));  // Highlight the current dot
+
+        // Ensure position is valid before modifying the array
+        if (dots.length > 0 && position < dots.length) {
+            dots[position].setTextColor(ContextCompat.getColor(this, R.color.white));  // Highlight current dot
         }
     }
-    ViewPager.OnPageChangeListener changeListener = new ViewPager.OnPageChangeListener() {
+
+    private final ViewPager.OnPageChangeListener changeListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            // Handle the event when the page is being scrolled
         }
 
         @Override
         public void onPageSelected(int position) {
-
             addDots(position);
-            if (position == 0){
-                btn.setVisibility(View.INVISIBLE);
-            }else if(position == 1){
-                btn.setVisibility(View.INVISIBLE);
-            }else{
-                animation= AnimationUtils.loadAnimation(onBoardingActivity.this,R.anim.slide_animation);
+
+            if (position == 2) {  // Last slide
+                animation = AnimationUtils.loadAnimation(onBoardingActivity.this, R.anim.slide_animation);
                 btn.setAnimation(animation);
                 btn.setVisibility(View.VISIBLE);
+            } else {
+                btn.setVisibility(View.INVISIBLE);
             }
-
-            // Handle the event when a new page is selected
         }
-
 
         @Override
         public void onPageScrollStateChanged(int state) {
-
-            // Handle the event when the scroll state changes
         }
     };
-
 }
